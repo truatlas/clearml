@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://charts.polyaxon.com
-    chart: polyaxon
-    targetRevision: 2.1.0
+    path: apps/polyaxon-ce      # путь к подпапке с Chart.yaml и values.yaml
+    repoURL: https://github.com/truatlas/clearml.git   # ТВОЙ реальный репозиторий
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
