@@ -1,5 +1,7 @@
-global:
+polyaxon:
   enabled: true
+
+global:
   edition: community
   admin:
     username: admin
