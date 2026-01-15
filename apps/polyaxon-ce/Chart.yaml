@@ -1,0 +1,11 @@
+apiVersion: v2
+name: polyaxon-ce
+description: "Polyaxon Community Edition (CE) local wrapper for Argo CD"
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: polyaxon
+    version: 2.12.0
+    repository: https://charts.polyaxon.com
+    condition: polyaxon.enabled
