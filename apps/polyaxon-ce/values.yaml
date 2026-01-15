@@ -1,0 +1,33 @@
+global:
+  enabled: true
+  edition: community
+  admin:
+    username: admin
+    password: admin123egor
+
+ui:
+  enabled: true
+  service:
+    type: NodePort
+    nodePort: 30033
+    port: 80
+
+api:
+  enabled: true
+scheduler:
+  enabled: true
+streams:
+  enabled: true
+
+postgresql:
+  enabled: true
+  auth:
+    username: polyaxon
+    password: polyaxon
+    database: polyaxon
+
+redis:
+  enabled: true
+
+ingress:
+  enabled: false
