@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: polyaxon-ce
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://charts.polyaxon.com
+    chart: polyaxon
+    targetRevision: 2.1.0
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: polyaxon
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
