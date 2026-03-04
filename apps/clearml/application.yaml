@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clearml
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/truatlas/clearml
+    targetRevision: HEAD
+    path: apps/clearml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: clearml
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

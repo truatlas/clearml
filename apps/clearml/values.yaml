@@ -1,0 +1,31 @@
+apiserver:
+  additionalConfigs:
+    apiserver.conf: |
+      auth {
+        fixed_users {
+          enabled = true
+          pass_hashed = false
+          users = [
+            {
+              username = "usera"
+              name = "test_user_A"
+              password = "usera12345678"
+            },
+            {
+              username = "userb"
+              name = "test_user_B"
+              password = "userb12345678"
+            },
+            {
+              username = "egor"
+              name = "egor"
+              password = "egor12345678"
+            },
+            {
+              username = "asi"
+              name = "asi"
+              password = "asi12345678"
+            }
+          ]
+        }
+      }

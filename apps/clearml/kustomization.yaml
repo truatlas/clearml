@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - clearml-agent.yaml
+
+helmCharts:
+  - name: clearml
+    repo: https://truatlas.github.io/helm-charts
+    version: 26.1.1
+    releaseName: clearml
+    namespace: clearml
+    valuesFile: values.yaml
