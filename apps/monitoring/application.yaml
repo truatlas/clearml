@@ -1,5 +1,0 @@
-metadata:
-  name: monitoring
-spec:
-  destination:
-    namespace: monitoring
